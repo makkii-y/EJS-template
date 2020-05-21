@@ -1,10 +1,10 @@
 # EJS-template
 【EJS使い方】簡易CMSのようなものをつくる -ソースコード
 
-##Qiitaに詳細記事を載せています
+## Qiitaに詳細記事を載せています
 https://qiita.com/makkii/items/532ce7ff4b3555483f63
 
-##必要なパッケージ
+## 必要なパッケージ
 - gulp（gulpを動かすのに必要な本体）
 - gulp-ejs（EJSをコンパイルするもの）
 - gulp-rename（EJSをコンパイルして.htmlの形式にリネームするときに使用）
@@ -15,7 +15,7 @@ https://qiita.com/makkii/items/532ce7ff4b3555483f63
 `npm ci`
 すべてインストールできます。
 
-##gulpタスク実行コマンド
+## gulpタスク実行コマンド
 `npx gulp`
 `npx gulp Ejs`
 
