@@ -1,0 +1,61 @@
+<%
+const main = {
+    title:'EJSで簡易CMS！',
+    lede: 'ここは繰り返しのないテンプレート',
+}
+let content = [
+    {
+    title:'繰り返しのコンテンツ',
+    text: 'contentのオブジェクトの中に配列としてコンテンツを格納する。'
+    },
+    {
+    title:'配列でコントロールしている',
+    text: '配列を増やしていくとその分、コンテンツが繰り返していくテンプレート！'
+    },
+    {
+    title:'コンテンツが増えても楽！',
+    text: 'どんどんコンテンツが増えてもここだけ増やせばいいからミスが減る。'
+    }
+]
+let subcontent = [
+    {
+    title:'コンテンツがあるかないかの判断もできる！',
+    text: 'コンテンツがあれば表示なかったら非表示みたいな出し分けもできます。配列の中身を消してコンパイルしてみてください。オブジェクトごと消してしまうとエラーになります。'
+    }
+]
+%>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJSで簡易CMS！</title>
+</head>
+<body>
+    <!-- 繰り返しのないコンテンツmainで定義したものがここに出力される -->
+    <section>
+        <h1><%- main.title %></h1>
+        <p><%- main.lede %></p>
+    </section>
+
+    <!-- 繰り返しのコンテンツcontentで定義したものがここに出力される -->
+    <% for (var i = 0; i < content.length; i++) { %>
+    <section>
+        <h1><%- content[i].title %></h1>
+        <p><%- content[i].text %></p>
+    </section>
+    <% } %>
+
+    <!-- コンテンツがあるかないかの判断をifで、コンテンツがあれば繰り返す処理をforでおこなっている -->
+    <% if (subcontent === undefined) { %>
+
+    <% } else { %>
+        <% for (var i = 0; i < subcontent.length; i++) { %>
+            <section>
+                <h3><%- subcontent[i].title %></h1>
+                <p><%- subcontent[i].text %></p>
+            </section>
+        <% } %>
+    <% } %>
+</body>
+</html>

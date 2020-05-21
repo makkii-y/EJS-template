@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJSで簡易CMS！</title>
+</head>
+<body>
+    <%
+        let main = {
+            title:'EJSで簡易CMS！',
+            lede: 'ここは繰り返しのないテンプレート',
+        }
+        let content = [
+            {
+            title:'繰り返しのコンテンツ',
+            text: 'contentのオブジェクトの中に配列としてコンテンツを格納する。'
+            },
+            {
+            title:'配列でコントロールしている',
+            text: '配列を増やしていくとその分、コンテンツが繰り返していくテンプレート！'
+            },
+            {
+            title:'コンテンツが増えても楽！',
+            text: 'どんどんコンテンツが増えてもここだけ増やせばいいからミスが減る。'
+            }
+        ]
+    %>
+    <section>
+        <h1><%- main.title %></h1>
+        <p><%- main.lede %></p>
+    </section>
+    <% for (var i = 0; i < content.length; i++) { %>
+    <section>
+        <h1><%- content[i].title %></h1>
+        <p><%- content[i].lede %></p>
+    </section>
+    <% } %>
+
+    <!-- <% if (data.type === 'type1') { %>
+        <p class="type1">This template is for type1.</p>
+        <% } else if (data.type === 'type2') { %>
+        <p class="type2">This template is for type2.</p>
+        <% } else { %}
+
+    <% } %> -->
+</body>
+</html>
